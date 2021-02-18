@@ -17,21 +17,14 @@ import Firebase
 class KeyboardViewController: KeyboardInputViewController {
     
     //    MARK: - MLKit Properties
-        let conditions = ModelDownloadConditions(
-            allowsCellularAccess: false,
-            allowsBackgroundDownloading: true
-        )
+    let conditions = ModelDownloadConditions(
+        allowsCellularAccess: false,
+        allowsBackgroundDownloading: true
+    )
+
+    var options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
         
-        var options: TranslatorOptions = {
-            let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
-            return options
-        }()
-        
-        var translator: Translator = {
-            let translator = Translator.translator(options:  TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish))
-            
-            return translator
-        }()
+    var translator: Translator? = nil
     
     // MARK: - View Controller Lifecycle
     
@@ -49,13 +42,14 @@ class KeyboardViewController: KeyboardInputViewController {
         
 //        ML Kit
         
-        translator.downloadModelIfNeeded(with: conditions) { [weak self] error in
-            guard error == nil, let self = self else {
+        self.translator = Translator.translator(options: self.options)
+        translator!.downloadModelIfNeeded(with: conditions) { error in
+            if error == nil {
                 print(error ?? "Error downloading!")
                 return
+            } else {
+                print("Downloaded model successfully")
             }
-            print("Downloaded model successfully")
-
         }
 //        print("TRANSLATED TEXT 1")
 //        translator.translate("how are you?") { translatedText, error in
@@ -67,7 +61,7 @@ class KeyboardViewController: KeyboardInputViewController {
     
 //  MARK: - MLKit
     func translateText(text: String) {
-        translator.translate(text) { translatedText, error in
+        translator!.translate(text) { translatedText, error in
             guard error == nil, let translatedText = translatedText else { return }
             print("TRANSLATED TEXT 2", translatedText)
 //            self.keyboardView.previewLabel.text = translatedText
