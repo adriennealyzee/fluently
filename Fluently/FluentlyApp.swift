@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
-import Firebase
+//import Firebase
+import MLKit
+
 
 @main
 struct FluentlyApp: App {
-    
+    var translator: Translator?
+
     init() {
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
+        print("initing")
+        let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
+        
     }
     
     var body: some Scene {

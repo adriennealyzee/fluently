@@ -11,7 +11,7 @@ import KeyboardKitSwiftUI
 import SwiftUI
 import Combine
 import MLKit
-import Firebase
+//import Firebase
 
 
 class KeyboardViewController: KeyboardInputViewController {
@@ -22,15 +22,30 @@ class KeyboardViewController: KeyboardInputViewController {
         allowsBackgroundDownloading: true
     )
 
-    var options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
+//    var options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
         
     var translator: Translator? = nil
     
+    convenience init() {
+        self.init(nibName:nil, bundle: nil)
+        let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
+        self.translator = Translator.translator(options: options)
+        
+        let conditions = ModelDownloadConditions(allowsCellularAccess: true, allowsBackgroundDownloading: true )
+        print("starting download")
+        self.translator!.downloadModelIfNeeded(with: conditions) { error in
+            guard error == nil else {
+                print("error downloading", error)
+                return
+            }
+            print("Model downloaded successfully")
+        }
+    }
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("TRANSLATED TEXT 0")
+//        print("TRANSLATED TEXT 0")
         setup(with: keyboardView)
         context.actionHandler = DemoKeyboardActionHandler(
             inputViewController: self,
@@ -41,16 +56,17 @@ class KeyboardViewController: KeyboardInputViewController {
             rightSpaceAction: .keyboardType(.images))
         
 //        ML Kit
-        
-        self.translator = Translator.translator(options: self.options)
-        translator!.downloadModelIfNeeded(with: conditions) { error in
-            if error == nil {
-                print(error ?? "Error downloading!")
-                return
-            } else {
-                print("Downloaded model successfully")
-            }
-        }
+//        self.translator = Translator.translator(options: options)
+//        let conditions = ModelDownloadConditions(allowsCellularAccess: true, allowsBackgroundDownloading: true )
+//        print("starting download")
+//
+//        self.translator!.downloadModelIfNeeded(with: conditions) { error in
+//            guard error == nil else {
+//                print("error downloading", error)
+//                return
+//            }
+//            print("Model downloaded successfully")
+//        }
 //        print("TRANSLATED TEXT 1")
 //        translator.translate("how are you?") { translatedText, error in
 //            guard error == nil, let translatedText = translatedText else { return }
@@ -61,12 +77,12 @@ class KeyboardViewController: KeyboardInputViewController {
     
 //  MARK: - MLKit
     func translateText(text: String) {
-        translator!.translate(text) { translatedText, error in
-            guard error == nil, let translatedText = translatedText else { return }
-            print("TRANSLATED TEXT 2", translatedText)
-//            self.keyboardView.previewLabel.text = translatedText
-//            pass translatedText to AutoCompleteSuggestion provider
-        }
+//        translator!.translate(text) { translatedText, error in
+//            guard error == nil, let translatedText = translatedText else { return }
+//            print("TRANSLATED TEXT 2", translatedText)
+////            self.keyboardView.previewLabel.text = translatedText
+////            pass translatedText to AutoCompleteSuggestion provider
+//        }
     }
 
     

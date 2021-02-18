@@ -7,7 +7,7 @@ target 'Fluently' do
   use_frameworks!
 
   # Pods for keyboard
-  pod 'Firebase/Analytics', '7.6'
+  #pod 'Firebase/Analytics', '7.6'
   pod 'GoogleMLKit/Translate'
    
 
@@ -18,7 +18,7 @@ target 'keyboard' do
   use_frameworks!
 
   # Pods for keyboard
-  pod 'Firebase/Analytics', '7.6'
+  #pod 'Firebase/Analytics', '7.6'
   pod 'GoogleMLKit/Translate'
 
  

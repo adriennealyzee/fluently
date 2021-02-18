@@ -1,0 +1,950 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		197D123F25B897B90031DF1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 197D123E25B897B90031DF1B /* GoogleService-Info.plist */; };
+		1984C2FD25AF7CDC001C18D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C2FC25AF7CDC001C18D5 /* ContentView.swift */; };
+		1984C2FF25AF7CDD001C18D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1984C2FE25AF7CDD001C18D5 /* Assets.xcassets */; };
+		1984C30225AF7CDD001C18D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1984C30125AF7CDD001C18D5 /* Preview Assets.xcassets */; };
+		1984C30D25AF7CDD001C18D5 /* FluentlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C30C25AF7CDD001C18D5 /* FluentlyTests.swift */; };
+		1984C31825AF7CDD001C18D5 /* FluentlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C31725AF7CDD001C18D5 /* FluentlyUITests.swift */; };
+		1984C32F25AF7D58001C18D5 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C32E25AF7D58001C18D5 /* KeyboardViewController.swift */; };
+		1984C33325AF7D58001C18D5 /* keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1984C32C25AF7D58001C18D5 /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1984C34525AF7F3F001C18D5 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1984C34425AF7F3F001C18D5 /* KeyboardKit */; };
+		1984C34B25AF8030001C18D5 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C34A25AF8030001C18D5 /* KeyboardView.swift */; };
+		1984C35225AF8078001C18D5 /* KeyboardKitSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1984C35125AF8078001C18D5 /* KeyboardKitSwiftUI */; };
+		1984C35825AF8159001C18D5 /* KeyboardView+Keyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C35725AF8159001C18D5 /* KeyboardView+Keyboards.swift */; };
+		1984C36925AF81CA001C18D5 /* ImageKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C36825AF81CA001C18D5 /* ImageKeyboard.swift */; };
+		1984C36A25AF81CA001C18D5 /* EmojiKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C36725AF81CA001C18D5 /* EmojiKeyboard.swift */; };
+		1984C37F25AF8205001C18D5 /* DemoImageKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C37B25AF8205001C18D5 /* DemoImageKeyboard.swift */; };
+		1984C38025AF8205001C18D5 /* DemoAutocompleteSuggestionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C37C25AF8205001C18D5 /* DemoAutocompleteSuggestionProvider.swift */; };
+		1984C38125AF8205001C18D5 /* DemoKeyboardActionHandlerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C37D25AF8205001C18D5 /* DemoKeyboardActionHandlerBase.swift */; };
+		1984C38225AF8205001C18D5 /* DemoKeyboardAppearanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C37E25AF8205001C18D5 /* DemoKeyboardAppearanceProvider.swift */; };
+		1984C39025AF8268001C18D5 /* DemoKeyboardActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C38F25AF8268001C18D5 /* DemoKeyboardActionHandler.swift */; };
+		1985AC7D25AF988A00C6A55F /* FluentlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C2FA25AF7CDC001C18D5 /* FluentlyApp.swift */; };
+		509812D7D6FFFAB2617A1971 /* Pods_keyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2BE839E158F0E6ED0FF23A /* Pods_keyboard.framework */; };
+		F21AFCA0B9F2743620F28015 /* Pods_Fluently.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A655F336B607D96D67B49642 /* Pods_Fluently.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1984C30925AF7CDD001C18D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1984C2EF25AF7CDC001C18D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1984C2F625AF7CDC001C18D5;
+			remoteInfo = Fluently;
+		};
+		1984C31425AF7CDD001C18D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1984C2EF25AF7CDC001C18D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1984C2F625AF7CDC001C18D5;
+			remoteInfo = Fluently;
+		};
+		1984C33125AF7D58001C18D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1984C2EF25AF7CDC001C18D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1984C32B25AF7D58001C18D5;
+			remoteInfo = keyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1984C33725AF7D58001C18D5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1984C33325AF7D58001C18D5 /* keyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		093691607E6F45E0F20964A2 /* Pods-keyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyboard.release.xcconfig"; path = "Target Support Files/Pods-keyboard/Pods-keyboard.release.xcconfig"; sourceTree = "<group>"; };
+		191B831B25DE12C10093577C /* fluently.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = fluently.entitlements; sourceTree = "<group>"; };
+		197D123E25B897B90031DF1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1984C2F725AF7CDC001C18D5 /* Fluently.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluently.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1984C2FA25AF7CDC001C18D5 /* FluentlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluentlyApp.swift; sourceTree = "<group>"; };
+		1984C2FC25AF7CDC001C18D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1984C2FE25AF7CDD001C18D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1984C30125AF7CDD001C18D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1984C30325AF7CDD001C18D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1984C30825AF7CDD001C18D5 /* FluentlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluentlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1984C30C25AF7CDD001C18D5 /* FluentlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluentlyTests.swift; sourceTree = "<group>"; };
+		1984C30E25AF7CDD001C18D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1984C31325AF7CDD001C18D5 /* FluentlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluentlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1984C31725AF7CDD001C18D5 /* FluentlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluentlyUITests.swift; sourceTree = "<group>"; };
+		1984C31925AF7CDD001C18D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1984C32C25AF7D58001C18D5 /* keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1984C32E25AF7D58001C18D5 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		1984C33025AF7D58001C18D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1984C34A25AF8030001C18D5 /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		1984C35725AF8159001C18D5 /* KeyboardView+Keyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyboardView+Keyboards.swift"; sourceTree = "<group>"; };
+		1984C36725AF81CA001C18D5 /* EmojiKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiKeyboard.swift; sourceTree = "<group>"; };
+		1984C36825AF81CA001C18D5 /* ImageKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageKeyboard.swift; sourceTree = "<group>"; };
+		1984C37B25AF8205001C18D5 /* DemoImageKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoImageKeyboard.swift; sourceTree = "<group>"; };
+		1984C37C25AF8205001C18D5 /* DemoAutocompleteSuggestionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAutocompleteSuggestionProvider.swift; sourceTree = "<group>"; };
+		1984C37D25AF8205001C18D5 /* DemoKeyboardActionHandlerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoKeyboardActionHandlerBase.swift; sourceTree = "<group>"; };
+		1984C37E25AF8205001C18D5 /* DemoKeyboardAppearanceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoKeyboardAppearanceProvider.swift; sourceTree = "<group>"; };
+		1984C38F25AF8268001C18D5 /* DemoKeyboardActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoKeyboardActionHandler.swift; sourceTree = "<group>"; };
+		3DA4A18EB4116AD654DB18D0 /* Pods-Fluently.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluently.debug.xcconfig"; path = "Target Support Files/Pods-Fluently/Pods-Fluently.debug.xcconfig"; sourceTree = "<group>"; };
+		41889C2783DEE6316E3AF82E /* Pods-keyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyboard.debug.xcconfig"; path = "Target Support Files/Pods-keyboard/Pods-keyboard.debug.xcconfig"; sourceTree = "<group>"; };
+		6B0EFAEB3A7A5478B799A605 /* Pods-Fluently.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluently.release.xcconfig"; path = "Target Support Files/Pods-Fluently/Pods-Fluently.release.xcconfig"; sourceTree = "<group>"; };
+		A655F336B607D96D67B49642 /* Pods_Fluently.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fluently.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2BE839E158F0E6ED0FF23A /* Pods_keyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1984C2F425AF7CDC001C18D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F21AFCA0B9F2743620F28015 /* Pods_Fluently.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1984C30525AF7CDD001C18D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1984C31025AF7CDD001C18D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1984C32925AF7D58001C18D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1984C35225AF8078001C18D5 /* KeyboardKitSwiftUI in Frameworks */,
+				1984C34525AF7F3F001C18D5 /* KeyboardKit in Frameworks */,
+				509812D7D6FFFAB2617A1971 /* Pods_keyboard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1984C2EE25AF7CDC001C18D5 = {
+			isa = PBXGroup;
+			children = (
+				1984C2F925AF7CDC001C18D5 /* Fluently */,
+				1984C30B25AF7CDD001C18D5 /* FluentlyTests */,
+				1984C31625AF7CDD001C18D5 /* FluentlyUITests */,
+				1984C32D25AF7D58001C18D5 /* keyboard */,
+				1984C2F825AF7CDC001C18D5 /* Products */,
+				2AC8A3F0EA184927A877223A /* Pods */,
+				CD322369D73D4095B6AAA3FC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1984C2F825AF7CDC001C18D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1984C2F725AF7CDC001C18D5 /* Fluently.app */,
+				1984C30825AF7CDD001C18D5 /* FluentlyTests.xctest */,
+				1984C31325AF7CDD001C18D5 /* FluentlyUITests.xctest */,
+				1984C32C25AF7D58001C18D5 /* keyboard.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1984C2F925AF7CDC001C18D5 /* Fluently */ = {
+			isa = PBXGroup;
+			children = (
+				1984C2FA25AF7CDC001C18D5 /* FluentlyApp.swift */,
+				1984C2FC25AF7CDC001C18D5 /* ContentView.swift */,
+				1984C2FE25AF7CDD001C18D5 /* Assets.xcassets */,
+				1984C30325AF7CDD001C18D5 /* Info.plist */,
+				1984C30025AF7CDD001C18D5 /* Preview Content */,
+			);
+			path = Fluently;
+			sourceTree = "<group>";
+		};
+		1984C30025AF7CDD001C18D5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1984C30125AF7CDD001C18D5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1984C30B25AF7CDD001C18D5 /* FluentlyTests */ = {
+			isa = PBXGroup;
+			children = (
+				1984C30C25AF7CDD001C18D5 /* FluentlyTests.swift */,
+				1984C30E25AF7CDD001C18D5 /* Info.plist */,
+			);
+			path = FluentlyTests;
+			sourceTree = "<group>";
+		};
+		1984C31625AF7CDD001C18D5 /* FluentlyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1984C31725AF7CDD001C18D5 /* FluentlyUITests.swift */,
+				1984C31925AF7CDD001C18D5 /* Info.plist */,
+			);
+			path = FluentlyUITests;
+			sourceTree = "<group>";
+		};
+		1984C32D25AF7D58001C18D5 /* keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				191B831B25DE12C10093577C /* fluently.entitlements */,
+				197D123E25B897B90031DF1B /* GoogleService-Info.plist */,
+				1984C38F25AF8268001C18D5 /* DemoKeyboardActionHandler.swift */,
+				1984C37C25AF8205001C18D5 /* DemoAutocompleteSuggestionProvider.swift */,
+				1984C37B25AF8205001C18D5 /* DemoImageKeyboard.swift */,
+				1984C37D25AF8205001C18D5 /* DemoKeyboardActionHandlerBase.swift */,
+				1984C37E25AF8205001C18D5 /* DemoKeyboardAppearanceProvider.swift */,
+				1984C32E25AF7D58001C18D5 /* KeyboardViewController.swift */,
+				1984C36725AF81CA001C18D5 /* EmojiKeyboard.swift */,
+				1984C36825AF81CA001C18D5 /* ImageKeyboard.swift */,
+				1984C34A25AF8030001C18D5 /* KeyboardView.swift */,
+				1984C35725AF8159001C18D5 /* KeyboardView+Keyboards.swift */,
+				1984C33025AF7D58001C18D5 /* Info.plist */,
+			);
+			path = keyboard;
+			sourceTree = "<group>";
+		};
+		2AC8A3F0EA184927A877223A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DA4A18EB4116AD654DB18D0 /* Pods-Fluently.debug.xcconfig */,
+				6B0EFAEB3A7A5478B799A605 /* Pods-Fluently.release.xcconfig */,
+				41889C2783DEE6316E3AF82E /* Pods-keyboard.debug.xcconfig */,
+				093691607E6F45E0F20964A2 /* Pods-keyboard.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD322369D73D4095B6AAA3FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A655F336B607D96D67B49642 /* Pods_Fluently.framework */,
+				AF2BE839E158F0E6ED0FF23A /* Pods_keyboard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1984C2F625AF7CDC001C18D5 /* Fluently */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1984C31C25AF7CDD001C18D5 /* Build configuration list for PBXNativeTarget "Fluently" */;
+			buildPhases = (
+				7073D2B455B5C5C692D223D0 /* [CP] Check Pods Manifest.lock */,
+				1984C2F325AF7CDC001C18D5 /* Sources */,
+				1984C2F425AF7CDC001C18D5 /* Frameworks */,
+				1984C2F525AF7CDC001C18D5 /* Resources */,
+				1984C33725AF7D58001C18D5 /* Embed App Extensions */,
+				5FD0E4AD06CEB1D0FEF1F184 /* [CP] Copy Pods Resources */,
+				570927EBD37B25CAC19B524E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1984C33225AF7D58001C18D5 /* PBXTargetDependency */,
+			);
+			name = Fluently;
+			productName = Fluently;
+			productReference = 1984C2F725AF7CDC001C18D5 /* Fluently.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1984C30725AF7CDD001C18D5 /* FluentlyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1984C31F25AF7CDD001C18D5 /* Build configuration list for PBXNativeTarget "FluentlyTests" */;
+			buildPhases = (
+				1984C30425AF7CDD001C18D5 /* Sources */,
+				1984C30525AF7CDD001C18D5 /* Frameworks */,
+				1984C30625AF7CDD001C18D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1984C30A25AF7CDD001C18D5 /* PBXTargetDependency */,
+			);
+			name = FluentlyTests;
+			productName = FluentlyTests;
+			productReference = 1984C30825AF7CDD001C18D5 /* FluentlyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1984C31225AF7CDD001C18D5 /* FluentlyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1984C32225AF7CDD001C18D5 /* Build configuration list for PBXNativeTarget "FluentlyUITests" */;
+			buildPhases = (
+				1984C30F25AF7CDD001C18D5 /* Sources */,
+				1984C31025AF7CDD001C18D5 /* Frameworks */,
+				1984C31125AF7CDD001C18D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1984C31525AF7CDD001C18D5 /* PBXTargetDependency */,
+			);
+			name = FluentlyUITests;
+			productName = FluentlyUITests;
+			productReference = 1984C31325AF7CDD001C18D5 /* FluentlyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		1984C32B25AF7D58001C18D5 /* keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1984C33425AF7D58001C18D5 /* Build configuration list for PBXNativeTarget "keyboard" */;
+			buildPhases = (
+				A70CBBAD83E21CA8A0B42077 /* [CP] Check Pods Manifest.lock */,
+				1984C32825AF7D58001C18D5 /* Sources */,
+				1984C32925AF7D58001C18D5 /* Frameworks */,
+				1984C32A25AF7D58001C18D5 /* Resources */,
+				FDBC8A1306694CBFD5C7F6E8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = keyboard;
+			packageProductDependencies = (
+				1984C34425AF7F3F001C18D5 /* KeyboardKit */,
+				1984C35125AF8078001C18D5 /* KeyboardKitSwiftUI */,
+			);
+			productName = keyboard;
+			productReference = 1984C32C25AF7D58001C18D5 /* keyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1984C2EF25AF7CDC001C18D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					1984C2F625AF7CDC001C18D5 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					1984C30725AF7CDD001C18D5 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 1984C2F625AF7CDC001C18D5;
+					};
+					1984C31225AF7CDD001C18D5 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 1984C2F625AF7CDC001C18D5;
+					};
+					1984C32B25AF7D58001C18D5 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 1984C2F225AF7CDC001C18D5 /* Build configuration list for PBXProject "Fluently" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1984C2EE25AF7CDC001C18D5;
+			packageReferences = (
+				1984C34325AF7F3F001C18D5 /* XCRemoteSwiftPackageReference "KeyboardKit" */,
+				1984C35025AF8078001C18D5 /* XCRemoteSwiftPackageReference "KeyboardKitSwiftUI" */,
+			);
+			productRefGroup = 1984C2F825AF7CDC001C18D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1984C2F625AF7CDC001C18D5 /* Fluently */,
+				1984C30725AF7CDD001C18D5 /* FluentlyTests */,
+				1984C31225AF7CDD001C18D5 /* FluentlyUITests */,
+				1984C32B25AF7D58001C18D5 /* keyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1984C2F525AF7CDC001C18D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1984C2FF25AF7CDD001C18D5 /* Assets.xcassets in Resources */,
+				1984C30225AF7CDD001C18D5 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1984C30625AF7CDD001C18D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1984C31125AF7CDD001C18D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1984C32A25AF7D58001C18D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197D123F25B897B90031DF1B /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		570927EBD37B25CAC19B524E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fluently/Pods-Fluently-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fluently/Pods-Fluently-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fluently/Pods-Fluently-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FD0E4AD06CEB1D0FEF1F184 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fluently/Pods-Fluently-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fluently/Pods-Fluently-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fluently/Pods-Fluently-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7073D2B455B5C5C692D223D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fluently-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A70CBBAD83E21CA8A0B42077 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-keyboard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDBC8A1306694CBFD5C7F6E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-keyboard/Pods-keyboard-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-keyboard/Pods-keyboard-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-keyboard/Pods-keyboard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1984C2F325AF7CDC001C18D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1985AC7D25AF988A00C6A55F /* FluentlyApp.swift in Sources */,
+				1984C2FD25AF7CDC001C18D5 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1984C30425AF7CDD001C18D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1984C30D25AF7CDD001C18D5 /* FluentlyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1984C30F25AF7CDD001C18D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1984C31825AF7CDD001C18D5 /* FluentlyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1984C32825AF7D58001C18D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1984C39025AF8268001C18D5 /* DemoKeyboardActionHandler.swift in Sources */,
+				1984C36A25AF81CA001C18D5 /* EmojiKeyboard.swift in Sources */,
+				1984C32F25AF7D58001C18D5 /* KeyboardViewController.swift in Sources */,
+				1984C34B25AF8030001C18D5 /* KeyboardView.swift in Sources */,
+				1984C38225AF8205001C18D5 /* DemoKeyboardAppearanceProvider.swift in Sources */,
+				1984C38125AF8205001C18D5 /* DemoKeyboardActionHandlerBase.swift in Sources */,
+				1984C38025AF8205001C18D5 /* DemoAutocompleteSuggestionProvider.swift in Sources */,
+				1984C37F25AF8205001C18D5 /* DemoImageKeyboard.swift in Sources */,
+				1984C36925AF81CA001C18D5 /* ImageKeyboard.swift in Sources */,
+				1984C35825AF8159001C18D5 /* KeyboardView+Keyboards.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1984C30A25AF7CDD001C18D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1984C2F625AF7CDC001C18D5 /* Fluently */;
+			targetProxy = 1984C30925AF7CDD001C18D5 /* PBXContainerItemProxy */;
+		};
+		1984C31525AF7CDD001C18D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1984C2F625AF7CDC001C18D5 /* Fluently */;
+			targetProxy = 1984C31425AF7CDD001C18D5 /* PBXContainerItemProxy */;
+		};
+		1984C33225AF7D58001C18D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1984C32B25AF7D58001C18D5 /* keyboard */;
+			targetProxy = 1984C33125AF7D58001C18D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1984C31A25AF7CDD001C18D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1984C31B25AF7CDD001C18D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1984C31D25AF7CDD001C18D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DA4A18EB4116AD654DB18D0 /* Pods-Fluently.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Fluently/Preview Content\"";
+				DEVELOPMENT_TEAM = 92M56958FV;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Fluently/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fluently.Fluently;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1984C31E25AF7CDD001C18D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B0EFAEB3A7A5478B799A605 /* Pods-Fluently.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Fluently/Preview Content\"";
+				DEVELOPMENT_TEAM = 92M56958FV;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Fluently/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fluently.Fluently;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1984C32025AF7CDD001C18D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 92M56958FV;
+				INFOPLIST_FILE = FluentlyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fluently.FluentlyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fluently.app/Fluently";
+			};
+			name = Debug;
+		};
+		1984C32125AF7CDD001C18D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 92M56958FV;
+				INFOPLIST_FILE = FluentlyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fluently.FluentlyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fluently.app/Fluently";
+			};
+			name = Release;
+		};
+		1984C32325AF7CDD001C18D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 92M56958FV;
+				INFOPLIST_FILE = FluentlyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fluently.FluentlyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fluently;
+			};
+			name = Debug;
+		};
+		1984C32425AF7CDD001C18D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 92M56958FV;
+				INFOPLIST_FILE = FluentlyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fluently.FluentlyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fluently;
+			};
+			name = Release;
+		};
+		1984C33525AF7D58001C18D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41889C2783DEE6316E3AF82E /* Pods-keyboard.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 92M56958FV;
+				INFOPLIST_FILE = keyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fluently.Fluently.keyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1984C33625AF7D58001C18D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 093691607E6F45E0F20964A2 /* Pods-keyboard.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 92M56958FV;
+				INFOPLIST_FILE = keyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fluently.Fluently.keyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1984C2F225AF7CDC001C18D5 /* Build configuration list for PBXProject "Fluently" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1984C31A25AF7CDD001C18D5 /* Debug */,
+				1984C31B25AF7CDD001C18D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1984C31C25AF7CDD001C18D5 /* Build configuration list for PBXNativeTarget "Fluently" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1984C31D25AF7CDD001C18D5 /* Debug */,
+				1984C31E25AF7CDD001C18D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1984C31F25AF7CDD001C18D5 /* Build configuration list for PBXNativeTarget "FluentlyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1984C32025AF7CDD001C18D5 /* Debug */,
+				1984C32125AF7CDD001C18D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1984C32225AF7CDD001C18D5 /* Build configuration list for PBXNativeTarget "FluentlyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1984C32325AF7CDD001C18D5 /* Debug */,
+				1984C32425AF7CDD001C18D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1984C33425AF7D58001C18D5 /* Build configuration list for PBXNativeTarget "keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1984C33525AF7D58001C18D5 /* Debug */,
+				1984C33625AF7D58001C18D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1984C34325AF7F3F001C18D5 /* XCRemoteSwiftPackageReference "KeyboardKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/KeyboardKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.2;
+			};
+		};
+		1984C35025AF8078001C18D5 /* XCRemoteSwiftPackageReference "KeyboardKitSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/KeyboardKitSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1984C34425AF7F3F001C18D5 /* KeyboardKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1984C34325AF7F3F001C18D5 /* XCRemoteSwiftPackageReference "KeyboardKit" */;
+			productName = KeyboardKit;
+		};
+		1984C35125AF8078001C18D5 /* KeyboardKitSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1984C35025AF8078001C18D5 /* XCRemoteSwiftPackageReference "KeyboardKitSwiftUI" */;
+			productName = KeyboardKitSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1984C2EF25AF7CDC001C18D5 /* Project object */;
+}
