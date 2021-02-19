@@ -16,31 +16,31 @@ import MLKit
 
 class KeyboardViewController: KeyboardInputViewController {
     
-    //    MARK: - MLKit Properties
-    let conditions = ModelDownloadConditions(
-        allowsCellularAccess: false,
-        allowsBackgroundDownloading: true
-    )
-
-//    var options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
-        
-    var translator: Translator? = nil
-    
+//    initialize NSFileCoordinator
     convenience init() {
-        self.init(nibName:nil, bundle: nil)
-        let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
-        self.translator = Translator.translator(options: options)
+        self.init(nibName: nil, bundle: nil)
         
-        let conditions = ModelDownloadConditions(allowsCellularAccess: true, allowsBackgroundDownloading: true )
-        print("starting download")
-        self.translator!.downloadModelIfNeeded(with: conditions) { error in
-            guard error == nil else {
-                print("error downloading", error)
-                return
-            }
-            print("Model downloaded successfully")
-        }
     }
+    
+//    var translator: Translator? = nil
+//
+//    convenience init() {
+//        self.init(nibName:nil, bundle: nil)
+//        let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
+//        self.translator = Translator.translator(options: options)
+//
+//        let conditions = ModelDownloadConditions(allowsCellularAccess: true, allowsBackgroundDownloading: true )
+//        print("starting download")
+//        self.translator!.downloadModelIfNeeded(with: conditions) { error in
+//            guard error == nil else {
+//                print("error downloading", error)
+//                return
+//            }
+//            print("Model downloaded successfully")
+//        }
+//    }
+    let sharedDefault = UserDefaults(suiteName: "group.fluently.appgroup")!
+    
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
@@ -54,6 +54,10 @@ class KeyboardViewController: KeyboardInputViewController {
         context.keyboardLayoutProvider = StandardKeyboardLayoutProvider(
             leftSpaceAction: .keyboardType(.emojis),
             rightSpaceAction: .keyboardType(.images))
+        
+        let mySharableData = sharedDefault.object(forKey: "keyForMySharableData") as! String
+        
+        print("mySharableData value: ", mySharableData)
         
 //        ML Kit
 //        self.translator = Translator.translator(options: options)
@@ -114,7 +118,21 @@ class KeyboardViewController: KeyboardInputViewController {
             case .success(let result): self?.autocompleteContext.suggestions = result
             }
         }
+        
+//        sharedDefault.set(word, forKey: "word")
+//        NotificationCenter.default.post(name: Notification.Name("wordUpdated"), object: nil)
+        
+        // update a file in shared app group
+        
+        
+        
     }
+    
+//    @objc func notificationReceived2(notification: Notification) {
+//        print("notification received 2!")
+//        // post a notification
+//
+//    }
     
     override func resetAutocomplete() {
         autocompleteContext.suggestions = []
