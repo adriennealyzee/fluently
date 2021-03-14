@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>544540022565-tlklissovgfrfein0am7okbd6uju0i4d.apps.googleusercontent.com</string>
+	<string>544540022565-1jc07tigams8581fas50p9pp2lm4mvpf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.544540022565-tlklissovgfrfein0am7okbd6uju0i4d</string>
+	<string>com.googleusercontent.apps.544540022565-1jc07tigams8581fas50p9pp2lm4mvpf</string>
 	<key>API_KEY</key>
 	<string>AIzaSyALenc_o0i3NI4OOCBjrTAEHroAAHAKuPo</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>fluently.Fluently</string>
+	<string>fluently.Fluently.keyboard</string>
 	<key>PROJECT_ID</key>
 	<string>fluently-e42ac</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:544540022565:ios:70f2f25206e7d480e0accc</string>
+	<string>1:544540022565:ios:f41b62bfd65c7456e0accc</string>
 </dict>
 </plist>

@@ -13,39 +13,30 @@ import Combine
 import MLKit
 //import Firebase
 
+extension UserDefaults {
+    @objc dynamic var userValue:String? {
+        return string(forKey: "keyboardInput")
+    }
+    @objc dynamic var translationString:String? {
+        return string(forKey: "translationString")
+    }
+}
 
 class KeyboardViewController: KeyboardInputViewController {
     
-//    initialize NSFileCoordinator
+    var userInputSubscriber: AnyCancellable?
+    var translationStringSubscriber: AnyCancellable?
+    let sharedContainer = UserDefaults(suiteName: "group.fluently.appgroup")
+    static let shared = Model()
+    
     convenience init() {
         self.init(nibName: nil, bundle: nil)
-        
     }
-    
-//    var translator: Translator? = nil
-//
-//    convenience init() {
-//        self.init(nibName:nil, bundle: nil)
-//        let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
-//        self.translator = Translator.translator(options: options)
-//
-//        let conditions = ModelDownloadConditions(allowsCellularAccess: true, allowsBackgroundDownloading: true )
-//        print("starting download")
-//        self.translator!.downloadModelIfNeeded(with: conditions) { error in
-//            guard error == nil else {
-//                print("error downloading", error)
-//                return
-//            }
-//            print("Model downloaded successfully")
-//        }
-//    }
-    let sharedDefault = UserDefaults(suiteName: "group.fluently.appgroup")!
-    
+
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print("TRANSLATED TEXT 0")
         setup(with: keyboardView)
         context.actionHandler = DemoKeyboardActionHandler(
             inputViewController: self,
@@ -55,41 +46,18 @@ class KeyboardViewController: KeyboardInputViewController {
             leftSpaceAction: .keyboardType(.emojis),
             rightSpaceAction: .keyboardType(.images))
         
-        let mySharableData = sharedDefault.object(forKey: "keyForMySharableData") as! String
+        Model.shared.downloadTranslator()
         
-        print("mySharableData value: ", mySharableData)
+        // Add observers
+        userInputSubscriber = sharedContainer!.publisher(for: \.userValue).sink() {
+                print("userInputSubscriber keyboardInput changed", $0)
+            }
         
-//        ML Kit
-//        self.translator = Translator.translator(options: options)
-//        let conditions = ModelDownloadConditions(allowsCellularAccess: true, allowsBackgroundDownloading: true )
-//        print("starting download")
-//
-//        self.translator!.downloadModelIfNeeded(with: conditions) { error in
-//            guard error == nil else {
-//                print("error downloading", error)
-//                return
-//            }
-//            print("Model downloaded successfully")
-//        }
-//        print("TRANSLATED TEXT 1")
-//        translator.translate("how are you?") { translatedText, error in
-//            guard error == nil, let translatedText = translatedText else { return }
-//        }
-//        let example = translateText(text: "how are you")
-//        print("TRANSLATED TEXT 2", example)
-    }
-    
-//  MARK: - MLKit
-    func translateText(text: String) {
-//        translator!.translate(text) { translatedText, error in
-//            guard error == nil, let translatedText = translatedText else { return }
-//            print("TRANSLATED TEXT 2", translatedText)
-////            self.keyboardView.previewLabel.text = translatedText
-////            pass translatedText to AutoCompleteSuggestion provider
-//        }
+        translationStringSubscriber = sharedContainer!.publisher(for: \.translationString).sink() {
+                print("translationStringSubscriber translationString changed", $0)
+            }
     }
 
-    
     
     // MARK: - Properties
     
@@ -119,22 +87,52 @@ class KeyboardViewController: KeyboardInputViewController {
             }
         }
         
-//        sharedDefault.set(word, forKey: "word")
-//        NotificationCenter.default.post(name: Notification.Name("wordUpdated"), object: nil)
-        
         // update a file in shared app group
-        
-        
+        UserDefaults(suiteName: "group.fluently.appgroup")!.set(textDocumentProxy.currentWord, forKey: "keyboardInput")
         
     }
     
-//    @objc func notificationReceived2(notification: Notification) {
-//        print("notification received 2!")
-//        // post a notification
-//
-//    }
+    func spacePress(){
+        print("spacePress")
+    }
+
     
     override func resetAutocomplete() {
         autocompleteContext.suggestions = []
     }
+}
+
+
+
+class Model{
+    
+    static let shared = Model()
+    var translator: Translator? = nil
+    
+    init(){
+        print("initing Model")
+    }
+    
+    func downloadTranslator(){
+        let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
+        self.translator = Translator.translator(options: options)
+        let conditions = ModelDownloadConditions(allowsCellularAccess: true, allowsBackgroundDownloading: true )
+        
+        print("starting download")
+        self.translator!.downloadModelIfNeeded(with: conditions) { error in
+            guard error == nil else {
+                print("error downloading", error)
+                return
+            }
+            print("Model downloaded successfully")
+        }
+    }
+    
+    func updateTranslationString(text:String){
+        self.translator!.translate(text) { translatedText, error in
+            guard error == nil, let translatedText = translatedText else { return }
+            print("translatedText", translatedText)
+        }
+    }
+    
 }

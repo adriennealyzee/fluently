@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		197D123F25B897B90031DF1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 197D123E25B897B90031DF1B /* GoogleService-Info.plist */; };
 		1984C2FD25AF7CDC001C18D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C2FC25AF7CDC001C18D5 /* ContentView.swift */; };
 		1984C2FF25AF7CDD001C18D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1984C2FE25AF7CDD001C18D5 /* Assets.xcassets */; };
 		1984C30225AF7CDD001C18D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1984C30125AF7CDD001C18D5 /* Preview Assets.xcassets */; };
@@ -27,6 +26,11 @@
 		1984C38225AF8205001C18D5 /* DemoKeyboardAppearanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C37E25AF8205001C18D5 /* DemoKeyboardAppearanceProvider.swift */; };
 		1984C39025AF8268001C18D5 /* DemoKeyboardActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C38F25AF8268001C18D5 /* DemoKeyboardActionHandler.swift */; };
 		1985AC7D25AF988A00C6A55F /* FluentlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984C2FA25AF7CDC001C18D5 /* FluentlyApp.swift */; };
+		198CAF9F25E1EC0800149879 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 198CAF9E25E1EC0800149879 /* GoogleService-Info.plist */; };
+		198CAFA025E1EC0800149879 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 198CAF9E25E1EC0800149879 /* GoogleService-Info.plist */; };
+		198CAFA125E1EC0800149879 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 198CAF9E25E1EC0800149879 /* GoogleService-Info.plist */; };
+		198CAFA225E1EC0800149879 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 198CAF9E25E1EC0800149879 /* GoogleService-Info.plist */; };
+		19ADD99425E1EA3B00A66EA1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ADD99325E1EA3B00A66EA1 /* Model.swift */; };
 		509812D7D6FFFAB2617A1971 /* Pods_keyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2BE839E158F0E6ED0FF23A /* Pods_keyboard.framework */; };
 		F21AFCA0B9F2743620F28015 /* Pods_Fluently.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A655F336B607D96D67B49642 /* Pods_Fluently.framework */; };
 /* End PBXBuildFile section */
@@ -72,7 +76,8 @@
 /* Begin PBXFileReference section */
 		093691607E6F45E0F20964A2 /* Pods-keyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyboard.release.xcconfig"; path = "Target Support Files/Pods-keyboard/Pods-keyboard.release.xcconfig"; sourceTree = "<group>"; };
 		191B831B25DE12C10093577C /* fluently.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = fluently.entitlements; sourceTree = "<group>"; };
-		197D123E25B897B90031DF1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		191B836C25DE6CE90093577C /* Fluently.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fluently.entitlements; sourceTree = "<group>"; };
+		191B837125DE6D270093577C /* keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = keyboard.entitlements; sourceTree = "<group>"; };
 		1984C2F725AF7CDC001C18D5 /* Fluently.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluently.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1984C2FA25AF7CDC001C18D5 /* FluentlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluentlyApp.swift; sourceTree = "<group>"; };
 		1984C2FC25AF7CDC001C18D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +102,8 @@
 		1984C37D25AF8205001C18D5 /* DemoKeyboardActionHandlerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoKeyboardActionHandlerBase.swift; sourceTree = "<group>"; };
 		1984C37E25AF8205001C18D5 /* DemoKeyboardAppearanceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoKeyboardAppearanceProvider.swift; sourceTree = "<group>"; };
 		1984C38F25AF8268001C18D5 /* DemoKeyboardActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoKeyboardActionHandler.swift; sourceTree = "<group>"; };
+		198CAF9E25E1EC0800149879 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		19ADD99325E1EA3B00A66EA1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3DA4A18EB4116AD654DB18D0 /* Pods-Fluently.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluently.debug.xcconfig"; path = "Target Support Files/Pods-Fluently/Pods-Fluently.debug.xcconfig"; sourceTree = "<group>"; };
 		41889C2783DEE6316E3AF82E /* Pods-keyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyboard.debug.xcconfig"; path = "Target Support Files/Pods-keyboard/Pods-keyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		6B0EFAEB3A7A5478B799A605 /* Pods-Fluently.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluently.release.xcconfig"; path = "Target Support Files/Pods-Fluently/Pods-Fluently.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +174,7 @@
 		1984C2F925AF7CDC001C18D5 /* Fluently */ = {
 			isa = PBXGroup;
 			children = (
+				191B836C25DE6CE90093577C /* Fluently.entitlements */,
 				1984C2FA25AF7CDC001C18D5 /* FluentlyApp.swift */,
 				1984C2FC25AF7CDC001C18D5 /* ContentView.swift */,
 				1984C2FE25AF7CDD001C18D5 /* Assets.xcassets */,
@@ -205,8 +213,9 @@
 		1984C32D25AF7D58001C18D5 /* keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				198CAF9E25E1EC0800149879 /* GoogleService-Info.plist */,
+				191B837125DE6D270093577C /* keyboard.entitlements */,
 				191B831B25DE12C10093577C /* fluently.entitlements */,
-				197D123E25B897B90031DF1B /* GoogleService-Info.plist */,
 				1984C38F25AF8268001C18D5 /* DemoKeyboardActionHandler.swift */,
 				1984C37C25AF8205001C18D5 /* DemoAutocompleteSuggestionProvider.swift */,
 				1984C37B25AF8205001C18D5 /* DemoImageKeyboard.swift */,
@@ -218,6 +227,7 @@
 				1984C34A25AF8030001C18D5 /* KeyboardView.swift */,
 				1984C35725AF8159001C18D5 /* KeyboardView+Keyboards.swift */,
 				1984C33025AF7D58001C18D5 /* Info.plist */,
+				19ADD99325E1EA3B00A66EA1 /* Model.swift */,
 			);
 			path = keyboard;
 			sourceTree = "<group>";
@@ -383,6 +393,7 @@
 			files = (
 				1984C2FF25AF7CDD001C18D5 /* Assets.xcassets in Resources */,
 				1984C30225AF7CDD001C18D5 /* Preview Assets.xcassets in Resources */,
+				198CAF9F25E1EC0800149879 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				198CAFA025E1EC0800149879 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +409,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				198CAFA125E1EC0800149879 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,7 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				197D123F25B897B90031DF1B /* GoogleService-Info.plist in Resources */,
+				198CAFA225E1EC0800149879 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +559,7 @@
 				1984C38125AF8205001C18D5 /* DemoKeyboardActionHandlerBase.swift in Sources */,
 				1984C38025AF8205001C18D5 /* DemoAutocompleteSuggestionProvider.swift in Sources */,
 				1984C37F25AF8205001C18D5 /* DemoImageKeyboard.swift in Sources */,
+				19ADD99425E1EA3B00A66EA1 /* Model.swift in Sources */,
 				1984C36925AF81CA001C18D5 /* ImageKeyboard.swift in Sources */,
 				1984C35825AF8159001C18D5 /* KeyboardView+Keyboards.swift in Sources */,
 			);
@@ -695,6 +709,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Fluently/Fluently.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Fluently/Preview Content\"";
 				DEVELOPMENT_TEAM = 92M56958FV;
@@ -719,6 +734,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Fluently/Fluently.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Fluently/Preview Content\"";
 				DEVELOPMENT_TEAM = 92M56958FV;
@@ -824,6 +840,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 41889C2783DEE6316E3AF82E /* Pods-keyboard.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92M56958FV;
@@ -846,6 +863,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 093691607E6F45E0F20964A2 /* Pods-keyboard.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92M56958FV;

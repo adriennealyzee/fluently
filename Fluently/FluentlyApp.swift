@@ -6,20 +6,43 @@
 //
 
 import SwiftUI
-//import Firebase
 import MLKit
-
 
 @main
 struct FluentlyApp: App {
-    var translator: Translator? = nil
-
+    
+    let sharedContainer = UserDefaults(suiteName: "group.fluently.appgroup")
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+    
     init() {
-//        FirebaseApp.configure()
+        print("initing")
+        Model.shared.downloadTranslator()
+        
+        let userInput = sharedContainer!.object(forKey: "keyboardInput") as! String
+        Model.shared.updateTranslationString(text: userInput)
+    }
+
+}
+
+class Model{
+    
+    static let shared = Model()
+    var translator: Translator? = nil
+    let sharedContainer = UserDefaults(suiteName: "group.fluently.appgroup")
+    
+    private init(){
+    }
+    
+    func downloadTranslator(){
         let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
         self.translator = Translator.translator(options: options)
-        
         let conditions = ModelDownloadConditions(allowsCellularAccess: true, allowsBackgroundDownloading: true )
+        
         print("starting download")
         self.translator!.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else {
@@ -28,31 +51,16 @@ struct FluentlyApp: App {
             }
             print("Model downloaded successfully")
         }
-        
-        // App Group
-        let sharedDefault = UserDefaults(suiteName: "group.fluently.appgroup")!
-        sharedDefault.set("secret code", forKey: "keyForMySharableData")
-        let mySharableData = sharedDefault.object(forKey: "keyForMySharableData") as! String
-        
-        print("mySharableData value: ", mySharableData)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(WordUpdate.notificationReceived(notification:)), name: Notification.Name("wordUpdated"), object: nil)
-        
     }
     
-    
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+    func updateTranslationString(text:String){
+        self.translator!.translate(text) { translatedText, error in
+            guard error == nil, let translatedText = translatedText else { return }
+            self.sharedContainer!.setValue(translatedText, forKey: "translationString")
+            
+            let printTranslated = self.sharedContainer!.object(forKey: "translationString") as! String
+            print("printTranslated", printTranslated)
         }
     }
-}
-
-class WordUpdate {
-
-    @objc func notificationReceived(notification: Notification) {
-        print("notification received!")
-        // post a notification to translationReceived
-        
-    }
+    
 }
