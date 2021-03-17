@@ -46,7 +46,7 @@ class KeyboardViewController: KeyboardInputViewController {
             leftSpaceAction: .keyboardType(.emojis),
             rightSpaceAction: .keyboardType(.images))
         
-        Model.shared.downloadTranslator()
+//        Model.shared.downloadTranslator()
         
         // Add observers
         userInputSubscriber = sharedContainer!.publisher(for: \.userValue).sink() {
