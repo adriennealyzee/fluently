@@ -789,10 +789,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Fluently/Fluently.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Shared Container/Fluently/Fluently.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Fluently/Preview Content\"";
-				DEVELOPMENT_TEAM = 92M56958FV;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Fluently/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -814,10 +814,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Fluently/Fluently.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Shared Container/Fluently/Fluently.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Fluently/Preview Content\"";
-				DEVELOPMENT_TEAM = 92M56958FV;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Fluently/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -920,7 +920,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 41889C2783DEE6316E3AF82E /* Pods-keyboard.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Shared Container/Keyboard/keyboard.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92M56958FV;
@@ -943,7 +943,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 093691607E6F45E0F20964A2 /* Pods-keyboard.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Shared Container/Keyboard/keyboard.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92M56958FV;
