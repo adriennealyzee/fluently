@@ -33,6 +33,12 @@
 		19ADD99425E1EA3B00A66EA1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ADD99325E1EA3B00A66EA1 /* Model.swift */; };
 		509812D7D6FFFAB2617A1971 /* Pods_keyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2BE839E158F0E6ED0FF23A /* Pods_keyboard.framework */; };
 		F21AFCA0B9F2743620F28015 /* Pods_Fluently.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A655F336B607D96D67B49642 /* Pods_Fluently.framework */; };
+		F244B8912707568300BDC3A2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B8902707568300BDC3A2 /* OnboardingView.swift */; };
+		F244B894270756BB00BDC3A2 /* WelcomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B893270756BB00BDC3A2 /* WelcomeCardView.swift */; };
+		F244B896270756C900BDC3A2 /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B895270756C900BDC3A2 /* SettingsCardView.swift */; };
+		F244B898270756D800BDC3A2 /* CompletedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B897270756D800BDC3A2 /* CompletedCardView.swift */; };
+		F244B89B2707570D00BDC3A2 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B89A2707570D00BDC3A2 /* StartButtonView.swift */; };
+		F244B89D2707571C00BDC3A2 /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B89C2707571C00BDC3A2 /* SettingsButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +115,12 @@
 		6B0EFAEB3A7A5478B799A605 /* Pods-Fluently.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluently.release.xcconfig"; path = "Target Support Files/Pods-Fluently/Pods-Fluently.release.xcconfig"; sourceTree = "<group>"; };
 		A655F336B607D96D67B49642 /* Pods_Fluently.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fluently.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2BE839E158F0E6ED0FF23A /* Pods_keyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F244B8902707568300BDC3A2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F244B893270756BB00BDC3A2 /* WelcomeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCardView.swift; sourceTree = "<group>"; };
+		F244B895270756C900BDC3A2 /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
+		F244B897270756D800BDC3A2 /* CompletedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedCardView.swift; sourceTree = "<group>"; };
+		F244B89A2707570D00BDC3A2 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		F244B89C2707571C00BDC3A2 /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,9 +187,9 @@
 		1984C2F925AF7CDC001C18D5 /* Fluently */ = {
 			isa = PBXGroup;
 			children = (
-				1984C30325AF7CDD001C18D5 /* Info.plist */,
+				F244B899270756F300BDC3A2 /* View */,
 				1984C2FA25AF7CDC001C18D5 /* FluentlyApp.swift */,
-				1984C2FC25AF7CDC001C18D5 /* ContentView.swift */,
+				1984C30325AF7CDD001C18D5 /* Info.plist */,
 				1984C30025AF7CDD001C18D5 /* Preview Content */,
 				E96AE0792703A11A00C2251C /* Resources */,
 			);
@@ -330,6 +342,28 @@
 				1984C37E25AF8205001C18D5 /* DemoKeyboardAppearanceProvider.swift */,
 			);
 			path = Appearance;
+			sourceTree = "<group>";
+		};
+		F244B8922707569200BDC3A2 /* Onboarding Cards */ = {
+			isa = PBXGroup;
+			children = (
+				F244B893270756BB00BDC3A2 /* WelcomeCardView.swift */,
+				F244B895270756C900BDC3A2 /* SettingsCardView.swift */,
+				F244B897270756D800BDC3A2 /* CompletedCardView.swift */,
+			);
+			path = "Onboarding Cards";
+			sourceTree = "<group>";
+		};
+		F244B899270756F300BDC3A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F244B8922707569200BDC3A2 /* Onboarding Cards */,
+				F244B89A2707570D00BDC3A2 /* StartButtonView.swift */,
+				F244B89C2707571C00BDC3A2 /* SettingsButtonView.swift */,
+				1984C2FC25AF7CDC001C18D5 /* ContentView.swift */,
+				F244B8902707568300BDC3A2 /* OnboardingView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -606,8 +640,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F244B89B2707570D00BDC3A2 /* StartButtonView.swift in Sources */,
+				F244B898270756D800BDC3A2 /* CompletedCardView.swift in Sources */,
+				F244B8912707568300BDC3A2 /* OnboardingView.swift in Sources */,
+				F244B89D2707571C00BDC3A2 /* SettingsButtonView.swift in Sources */,
+				F244B894270756BB00BDC3A2 /* WelcomeCardView.swift in Sources */,
 				1985AC7D25AF988A00C6A55F /* FluentlyApp.swift in Sources */,
 				1984C2FD25AF7CDC001C18D5 /* ContentView.swift in Sources */,
+				F244B896270756C900BDC3A2 /* SettingsCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
