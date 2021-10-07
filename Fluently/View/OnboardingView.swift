@@ -14,14 +14,14 @@ struct OnboardingView: View {
             SettingsCardView()
             CompletedCardView()
         }
-        .tabViewStyle(.page)
+        .tabViewStyle(PageTabViewStyle())
         .padding(.top)
         .padding(.bottom)
     }
 }
 
-struct OnboardingView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingView()
-    }
-}
+//struct OnboardingView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OnboardingView()
+//    }
+//}
