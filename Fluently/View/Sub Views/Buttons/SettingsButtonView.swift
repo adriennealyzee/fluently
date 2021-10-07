@@ -15,16 +15,18 @@ struct SettingsButtonView: View {
         Button(action: { goToSettings() }) {
             HStack(spacing: 8) {
                 Text("Go To Settings")
-                    .font(.largeTitle)
+                    .font(.title)
                 Image(systemName: "arrow.right.circle")
                     .imageScale(.large)
             }
+           
             .padding(.horizontal, 16)
             .padding(.vertical, 10)
             .background(
                 Capsule().strokeBorder(Color.black, lineWidth: 1.75))
         }//: BUTTON
         .accentColor(Color.black)
+        .padding(.top)
     }
 }
 
