@@ -14,9 +14,15 @@ struct FluentlyApp: App {
 //     It will be best to use FileManager, UserDefaults work best for small pieces of data.
 //     let sharedContainer = UserDefaults(suiteName: "group.fluently.appgroup")
     
+    @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isOnboarding {
+                OnboardingView()
+            } else {
+                ContentView()
+            }
         }
     }
     

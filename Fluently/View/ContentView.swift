@@ -21,6 +21,8 @@ struct ContentView: View {
     
     @State private var text: String = ""
     @State var translator: Translator!
+    @State private var showingSettings: Bool = false
+    @AppStorage("isOnboarding") var isOnboarding: Bool = false
     
     lazy var locale = Locale.current
     lazy var allLanguages = TranslateLanguage.allLanguages().sorted {
@@ -36,22 +38,106 @@ struct ContentView: View {
     //    }
     
     var body: some View {
-        TextField("type something...", text: $text)
-            .padding()
-            .onChange(of: text) { value in
-                print("Value: \(value)")
-                setTranslator(inputLanguage: TranslateLanguage.english, outputLanguage: TranslateLanguage.spanish)
-            }
+        
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 20) {
+                    
+                    //: MARK: - Test Section
+                    GroupBox(label: SectionHeaderView(labelText: "Test the Translator", labelImage: "square.and.pencil")) {
+                        Divider().padding(.vertical, 4)
+                        
+                        Text("Translated Text here")
+                            .padding(.vertical, 8)
+                            .frame(minHeight: 60)
+                            
+                            .font(.body)
+                            .multilineTextAlignment(.leading)
+                        TextField("type something here...", text: $text)
+                            .padding()
+                            .multilineTextAlignment(.center)
+                            .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
+                    }.padding()
+                    
+                    //: MARK: - Settings Section
+                    GroupBox(
+                        label: SectionHeaderView(labelText: "Settings", labelImage: "gear")
+                    ) {
+                        Divider().padding(.vertical, 4)
+                        
+                            HStack {
+                                NavigationLink(destination: SettingsView()) {
+                                             
+                                          
+                                    Text("Application Settings")
+                                        .padding(.vertical, 8)
+                                        .font(.body)
+                                        .multilineTextAlignment(.leading)
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "arrow.right")
+                                }
+                            }
+                            .padding()
+                            .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
+                            
+                        
+                    }.padding()
+                    
+                    
+                    
+                    //: MARK: - Restart Onboarding Section
+                    GroupBox(
+                        label: SectionHeaderView(labelText: "Customization", labelImage: "restart.circle")
+                    ) {
+                        Divider().padding(.vertical, 4)
+                        
+                        Text("If you wish, you can restart the application by turning the switch to the on position. By doing this, it will restart the onboarding process and you will see the welcome screen once again.")
+                            .padding(.vertical, 8)
+                            .frame(minHeight: 60)
+                            .layoutPriority(1)
+                            .font(.footnote)
+                            .multilineTextAlignment(.center)
+                        Toggle(isOn: $isOnboarding) {
+                            if isOnboarding {
+                                Text("Restarted".uppercased())
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.green)
+                            } else {
+                                Text("Restart".uppercased())
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.secondary)
+                            }
+                        }
+                        .padding()
+                        .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
+                        
+                    }.padding()
+                    
+                }
+                
+            }//: Scroll
+            .navigationTitle("Fluently")
+            
+        }
     }
 }
 
 
-
+//            TextField("type something...", text: $text)
+//                .padding()
+//                .onChange(of: text) { value in
+//                    print("Value: \(value)")
+//                    setTranslator(inputLanguage: TranslateLanguage.english, outputLanguage: TranslateLanguage.spanish)
+//
+//
+//                }
 extension ContentView {
     
     /// This function returns a remote model of the given language.
     ///
-    /// The remote model that is return is yet to be downloaded. It represents the one we want to
+    /// The remote model that will return is yet to be downloaded. It represents the one we want to
     /// download from the servers.
     ///
     /// - Parameter forLanguage: The given language for the remote model.
@@ -59,7 +145,7 @@ extension ContentView {
         return TranslateRemoteModel.translateRemoteModel(language: forLanguage)
     }
     
-    /// This function decided whether deletes or download models.
+    /// This function decides whether to delete or download models.
     ///
     /// After giving the function a language it will check whether or not
     /// its has been downloaded the model for that language. Depending on
