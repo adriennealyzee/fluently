@@ -20,6 +20,7 @@ import MLKit
 struct ContentView: View {
     
     @State private var text: String = ""
+    @State private var translation: String = "Translated text goes here."
     @State var translator: Translator!
     @State private var showingSettings: Bool = false
     @AppStorage("isOnboarding") var isOnboarding: Bool = false
@@ -47,16 +48,22 @@ struct ContentView: View {
                     GroupBox(label: SectionHeaderView(labelText: "Test the Translator", labelImage: "square.and.pencil")) {
                         Divider().padding(.vertical, 4)
                         
-                        Text("Translated Text here")
+                        Text("\(translation)")
                             .padding(.vertical, 8)
                             .frame(minHeight: 60)
                             
                             .font(.body)
                             .multilineTextAlignment(.leading)
-                        TextField("type something here...", text: $text)
+                        TextField("Type something here...", text: $text)
                             .padding()
                             .multilineTextAlignment(.center)
                             .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
+                            .onChange(of: text) { value in
+                                print("Value: \(value)")
+                                setTranslator(inputLanguage: TranslateLanguage.english, outputLanguage: TranslateLanguage.spanish)
+                            }
+                            
+
                     }.padding()
                     
                     //: MARK: - Settings Section
@@ -239,6 +246,7 @@ extension ContentView {
                     if translatorForDownloading == self.translator {
                         // The translation was successfull.
                         print(result!)
+                        self.translation = result!
                     }
                 }
             }
