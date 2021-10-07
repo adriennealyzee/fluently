@@ -8,27 +8,31 @@
 import SwiftUI
 
 struct SettingsButtonView: View {
+    
     var body: some View {
-        Button(action: {}) {
+        
+        
+        Button(action: { goToSettings() }) {
             HStack(spacing: 8) {
                 Text("Go To Settings")
-                    .font(.system(.title2, design: .rounded))
+                    .font(.largeTitle)
                 Image(systemName: "arrow.right.circle")
                     .imageScale(.large)
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 10)
-            
             .background(
-                Capsule().strokeBorder(Color.black, lineWidth: 1.25))
+                Capsule().strokeBorder(Color.black, lineWidth: 1.75))
         }//: BUTTON
         .accentColor(Color.black)
     }
 }
 
-struct SettingsButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsButtonView()
-            .previewLayout(.sizeThatFits)
-    }
+//make a go to settings func here...
+
+func goToSettings() {
+    return
 }
+
+
+
