@@ -80,10 +80,12 @@ struct ContentView: View {
                                         .padding(.vertical, 8)
                                         .font(.body)
                                         .multilineTextAlignment(.leading)
+                                        .foregroundColor(.white)
                                     
                                     Spacer()
                                     
                                     Image(systemName: "arrow.right")
+                                        .foregroundColor(.white)
                                 }
                             }
                             .padding()

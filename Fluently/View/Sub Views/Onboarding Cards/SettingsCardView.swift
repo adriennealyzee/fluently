@@ -69,7 +69,7 @@ struct SettingsCardView: View {
                     SettingsButtonView()
                         
                 }
-            }
+            }.foregroundColor(.black)
         }
         .onAppear {
             withAnimation(.easeOut(duration: 0.5)) {
@@ -78,7 +78,7 @@ struct SettingsCardView: View {
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         
-        .background(LinearGradient(gradient: Gradient(colors: [Color("colorBlue"), Color("colorDarkBlue")]), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors: [Color("colorSeaFoam"), Color("colorSeaFoam")]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
         .padding(.horizontal, 20)
     }
