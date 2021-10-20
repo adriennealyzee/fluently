@@ -11,27 +11,8 @@ import KeyboardKitSwiftUI
 import SwiftUI
 import Combine
 import MLKit
-//import Firebase
-
-extension UserDefaults {
-    @objc dynamic var userValue:String? {
-        return string(forKey: "keyboardInput")
-    }
-    @objc dynamic var translationString:String? {
-        return string(forKey: "translationString")
-    }
-}
 
 class KeyboardViewController: KeyboardInputViewController {
-    
-    var userInputSubscriber: AnyCancellable?
-    var translationStringSubscriber: AnyCancellable?
-    let sharedContainer = UserDefaults(suiteName: "group.fluently.appgroup")
-    static let shared = Model()
-    
-    convenience init() {
-        self.init(nibName: nil, bundle: nil)
-    }
 
     // MARK: - View Controller Lifecycle
     
@@ -45,23 +26,10 @@ class KeyboardViewController: KeyboardInputViewController {
         context.keyboardLayoutProvider = StandardKeyboardLayoutProvider(
             leftSpaceAction: .keyboardType(.emojis),
             rightSpaceAction: .keyboardType(.images))
-        
-//        Model.shared.downloadTranslator()
-        
-        // Add observers
-        userInputSubscriber = sharedContainer!.publisher(for: \.userValue).sink() {
-                print("userInputSubscriber keyboardInput changed", $0)
-            }
-        
-        translationStringSubscriber = sharedContainer!.publisher(for: \.translationString).sink() {
-                print("translationStringSubscriber translationString changed", $0)
-            }
     }
 
     
     // MARK: - Properties
-    
-    private var cancellables = [AnyCancellable]()
     
     private let toastContext = KeyboardToastContext()
     
@@ -87,9 +55,6 @@ class KeyboardViewController: KeyboardInputViewController {
             }
         }
         
-        // update a file in shared app group
-        UserDefaults(suiteName: "group.fluently.appgroup")!.set(textDocumentProxy.currentWord, forKey: "keyboardInput")
-        
     }
     
     func spacePress(){
@@ -102,37 +67,31 @@ class KeyboardViewController: KeyboardInputViewController {
     }
 }
 
-
-
-class Model{
-    
-    static let shared = Model()
-    var translator: Translator? = nil
-    
-    init(){
-        print("initing Model")
-    }
-    
-    func downloadTranslator(){
-        let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
-        self.translator = Translator.translator(options: options)
-        let conditions = ModelDownloadConditions(allowsCellularAccess: true, allowsBackgroundDownloading: true )
+extension KeyboardViewController {
+    func lookForSomething() {
         
-        print("starting download")
-        self.translator!.downloadModelIfNeeded(with: conditions) { error in
-            guard error == nil else {
-                print("error downloading", error)
-                return
-            }
-            print("Model downloaded successfully")
+        let stringFilename = "MyString.txt"
+        // let stringToSave = "12"
+        
+        let fileManager = FileManager()
+        let sharedContainerDirectory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.fluently.appgroup")!
+        let sharedLanguagesDirectory = sharedContainerDirectory.appendingPathComponent("Languages", isDirectory: true)
+        let stringFilePath = sharedLanguagesDirectory.appendingPathComponent(stringFilename, isDirectory: false)
+        
+        // Checking if there is something inside the shared containers directory
+        do {
+            let contentOfSharedContainer = try fileManager.contentsOfDirectory(atPath: sharedContainerDirectory.path)
+            print(contentOfSharedContainer)
+            let contentOfLanguageDirectory = try fileManager.contentsOfDirectory(atPath: sharedLanguagesDirectory.path)
+            print(contentOfLanguageDirectory)
+            let contentInFile = try String(contentsOf: stringFilePath, encoding: .utf8)
+            print(contentInFile)
+            
+        } catch let error {
+            print("Error looking for something")
+            print(error)
         }
+        
+        
     }
-    
-    func updateTranslationString(text:String){
-        self.translator!.translate(text) { translatedText, error in
-            guard error == nil, let translatedText = translatedText else { return }
-            print("translatedText", translatedText)
-        }
-    }
-    
 }
