@@ -41,8 +41,8 @@ struct CompletedCardView: View {
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+        .background(LinearGradient(gradient: Gradient(colors: [Color("colorDarkSeaFoam"), Color("colorDarkSeaFoam")]), startPoint: .top, endPoint: .bottom))
         
-        .background(LinearGradient(gradient: Gradient(colors: [Color("colorGray"), Color("colorGray")]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
         .padding(.horizontal, 20)
     }
