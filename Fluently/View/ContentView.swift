@@ -9,14 +9,6 @@ import SwiftUI
 import Combine
 import MLKit
 
-// let sharedContainer = UserDefaults(suiteName: "group.fluently.appgroup")
-
-//extension UserDefaults {
-//    @objc dynamic var keyboardInput:String? {
-//        return string(forKey: "keyboardInput")
-//    }
-//}
-
 struct ContentView: View {
     
     @State private var text: String = ""
@@ -30,13 +22,6 @@ struct ContentView: View {
         // Sort alphabetically.
         return locale.localizedString(forLanguageCode: $0.rawValue)! < locale.localizedString(forLanguageCode: $1.rawValue)!
     }
-    
-    // if sharedContainer["keyboardInput"] is changed:
-    //    @State var cancellable: AnyCancellable? = sharedContainer!.publisher(for: \.keyboardInput).sink() {
-    //            print("subscriber keyboardInput: ", $0)
-    //            let userInput = sharedContainer!.object(forKey: "keyboardInput") as! String
-    //            Model.shared.updateTranslationString(text: userInput)
-    //    }
     
     var body: some View {
         
@@ -61,6 +46,9 @@ struct ContentView: View {
                             .onChange(of: text) { value in
                                 print("Value: \(value)")
                                 setTranslator(inputLanguage: TranslateLanguage.english, outputLanguage: TranslateLanguage.spanish)
+                                
+                                saveSomething()
+                                // lookForSomething()
                             }
                             
 
@@ -131,20 +119,98 @@ struct ContentView: View {
     }
 }
 
-
-//            TextField("type something...", text: $text)
-//                .padding()
-//                .onChange(of: text) { value in
-//                    print("Value: \(value)")
-//                    setTranslator(inputLanguage: TranslateLanguage.english, outputLanguage: TranslateLanguage.spanish)
-//
-//
-//                }
 extension ContentView {
+    
+    func saveSomething() {
+        
+        let stringFilename = "MyString.txt"
+        let stringToSave = "12"
+        
+        let fileManager = FileManager()
+        let sharedContainerDirectory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.fluently.appgroup")!
+        let sharedLanguagesDirectory = sharedContainerDirectory.appendingPathComponent("Languages", isDirectory: true)
+        let stringFilePath = sharedLanguagesDirectory.appendingPathComponent(stringFilename, isDirectory: false)
+        
+        // Create Language Directory
+        do {
+            try fileManager.createDirectory(at: sharedLanguagesDirectory, withIntermediateDirectories: true, attributes: nil)
+            
+        } catch let error {
+            print("Error creating language directory")
+            print(error)
+        }
+        
+        // Writing a file to memory
+        let data: Data? = stringToSave.data(using: .utf8)
+        do {
+            try data!.write(to: stringFilePath, options: .atomic)
+            
+        } catch let error {
+            print("Error writing the file to memory")
+            print(error)
+        }
+        
+//        // Checking if there is something inside the shared containers directory
+//        do {
+//            let contentOfSharedContainer = try fileManager.contentsOfDirectory(atPath: sharedContainerDirectory.path)
+//            print(contentOfSharedContainer)
+//
+//        } catch let error {
+//            print("Error writing the file to memory")
+//            print(error)
+//        }
+    }
+    
+    func lookForSomething() {
+        
+        let stringFilename = "MyString.txt"
+        // let stringToSave = "12"
+        
+        let fileManager = FileManager()
+        let sharedContainerDirectory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.fluently.appgroup")!
+        let sharedLanguagesDirectory = sharedContainerDirectory.appendingPathComponent("Languages", isDirectory: true)
+        let stringFilePath = sharedLanguagesDirectory.appendingPathComponent(stringFilename, isDirectory: false)
+        
+        // Checking if there is something inside the shared containers directory
+        do {
+            let contentOfSharedContainer = try fileManager.contentsOfDirectory(atPath: sharedContainerDirectory.path)
+            print(contentOfSharedContainer)
+            let contentOfLanguageDirectory = try fileManager.contentsOfDirectory(atPath: sharedLanguagesDirectory.path)
+            print(contentOfLanguageDirectory)
+            let contentInFile = try String(contentsOf: stringFilePath, encoding: .utf8)
+            print(contentInFile)
+            
+        } catch let error {
+            print("Error looking for something")
+            print(error)
+        }
+        
+        
+    }
+    
+    func deleteSomething() {
+        
+        // let stringFilename = "MyString.txt"
+        // let stringToSave = "12"
+        
+        let fileManager = FileManager()
+        let sharedContainerDirectory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.fluently.appgroup")!
+        let sharedLanguagesDirectory = sharedContainerDirectory.appendingPathComponent("Languages", isDirectory: true)
+        // let stringFilePath = sharedLanguagesDirectory.appendingPathComponent(stringFilename, isDirectory: false)
+        
+        // Deletes files from previous location
+        do {
+            try fileManager.removeItem(at: sharedLanguagesDirectory)
+
+        } catch let error {
+            print("Error deleting the file")
+            print(error)
+        }
+    }
     
     /// This function returns a remote model of the given language.
     ///
-    /// The remote model that will return is yet to be downloaded. It represents the one we want to
+    /// The remote model that is return is yet to be downloaded. It represents the one we want to
     /// download from the servers.
     ///
     /// - Parameter forLanguage: The given language for the remote model.
@@ -152,7 +218,7 @@ extension ContentView {
         return TranslateRemoteModel.translateRemoteModel(language: forLanguage)
     }
     
-    /// This function decides whether to delete or download models.
+    /// This function decided whether deletes or download models.
     ///
     /// After giving the function a language it will check whether or not
     /// its has been downloaded the model for that language. Depending on
