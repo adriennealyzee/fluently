@@ -16,6 +16,8 @@ struct FluentlyApp: App {
     
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
     
+
+    
     var body: some Scene {
         WindowGroup {
             if isOnboarding {

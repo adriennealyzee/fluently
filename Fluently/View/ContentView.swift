@@ -20,10 +20,12 @@ import MLKit
 struct ContentView: View {
     
     @State private var text: String = ""
-    @State private var translation: String = "Translated text goes here."
+    @State private var translation: String = "type something below to translate..."
     @State var translator: Translator!
     @State private var showingSettings: Bool = false
+    
     @AppStorage("isOnboarding") var isOnboarding: Bool = false
+    @AppStorage("selectedLanguage") var selectedLanguage: String?
     
     lazy var locale = Locale.current
     lazy var allLanguages = TranslateLanguage.allLanguages().sorted {
@@ -51,7 +53,7 @@ struct ContentView: View {
                         Text("\(translation)")
                             .padding(.vertical, 8)
                             .frame(minHeight: 60)
-                            
+                        
                             .font(.body)
                             .multilineTextAlignment(.leading)
                         TextField("Type something here...", text: $text)
@@ -62,37 +64,46 @@ struct ContentView: View {
                                 print("Value: \(value)")
                                 setTranslator(inputLanguage: TranslateLanguage.english, outputLanguage: TranslateLanguage.spanish)
                             }
-                            
-
-                    }.padding()
+                    }.padding(.horizontal)
                     
                     //: MARK: - Settings Section
                     GroupBox(
                         label: SectionHeaderView(labelText: "Settings", labelImage: "gear")
                     ) {
                         Divider().padding(.vertical, 4)
-                        
+                        Button(action: {
+                            showingSettings = true
+                            
+                            
+                        }) {
                             HStack {
-                                NavigationLink(destination: SettingsView()) {
-                                             
-                                          
-                                    Text("Application Settings")
-                                        .padding(.vertical, 8)
-                                        .font(.body)
-                                        .multilineTextAlignment(.leading)
-                                        .foregroundColor(.white)
-                                    
-                                    Spacer()
-                                    
-                                    Image(systemName: "arrow.right")
-                                        .foregroundColor(.white)
+                                
+                                Text("Selected Language")
+                                    .padding(.vertical, 8)
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
+                                    .foregroundColor(Color.secondary)
+                                
+                                Spacer()
+                                
+                                if let unwrappedValue = selectedLanguage {
+                                    Text(unwrappedValue)
+                                        .foregroundColor(Color.secondary)
+                                } else {
+                                    Text("Choose a Language")
+                                        .foregroundColor(Color.secondary)
                                 }
                             }
-                            .padding()
-                            .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
-                            
+                            .sheet(isPresented: $showingSettings) {
+                                LanguageSettings()
+                        }
                         
-                    }.padding()
+                        }
+                        .padding()
+                        .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
+                        
+                        
+                    }.padding(.horizontal)
                     
                     
                     
@@ -108,7 +119,11 @@ struct ContentView: View {
                             .layoutPriority(1)
                             .font(.footnote)
                             .multilineTextAlignment(.center)
-                        Toggle(isOn: $isOnboarding) {
+                        
+                        Button(action: {
+                            isOnboarding = true
+                          
+                        }, label: {
                             if isOnboarding {
                                 Text("Restarted".uppercased())
                                     .fontWeight(.bold)
@@ -119,29 +134,17 @@ struct ContentView: View {
                                     .foregroundColor(Color.secondary)
                             }
                         }
+                        )
                         .padding()
                         .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
-                        
-                    }.padding()
-                    
-                }
+                    }.padding(.horizontal)
+                }.navigationTitle("Fluently")
                 
-            }//: Scroll
-            .navigationTitle("Fluently")
-            
+            }
         }
     }
 }
 
-
-//            TextField("type something...", text: $text)
-//                .padding()
-//                .onChange(of: text) { value in
-//                    print("Value: \(value)")
-//                    setTranslator(inputLanguage: TranslateLanguage.english, outputLanguage: TranslateLanguage.spanish)
-//
-//
-//                }
 extension ContentView {
     
     /// This function returns a remote model of the given language.
@@ -199,9 +202,9 @@ extension ContentView {
         let downloadedModels = ModelManager.modelManager().downloadedTranslateModels
         
         let message = "Downloaded models: " +
-            downloadedModels.map({ model in
-                Locale.current.localizedString(forLanguageCode: model.language.rawValue)!
-            }).joined(separator: ", ")
+        downloadedModels.map({ model in
+            Locale.current.localizedString(forLanguageCode: model.language.rawValue)!
+        }).joined(separator: ", ")
         
         print(message)
     }
@@ -254,7 +257,6 @@ extension ContentView {
             }
         }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -10,8 +10,6 @@ import SwiftUI
 struct CompletedCardView: View {
     //: MARK: - Properties
     @State private var isAnimating: Bool = false
-    
-    
     //:MARK: - Body
     var body: some View {
         ZStack {
