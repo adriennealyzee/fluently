@@ -23,6 +23,7 @@ struct ContentView: View {
     @State private var translation: String = "type something below to translate..."
     @State var translator: Translator!
     @State private var showingSettings: Bool = false
+    @State private var showingOnboarding: Bool = false
     
     @AppStorage("isOnboarding") var isOnboarding: Bool = false
     @AppStorage("selectedLanguage") var selectedLanguage: String?
@@ -96,8 +97,8 @@ struct ContentView: View {
                             }
                             .sheet(isPresented: $showingSettings) {
                                 LanguageSettings()
-                        }
-                        
+                            }
+                            
                         }
                         .padding()
                         .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
@@ -121,22 +122,21 @@ struct ContentView: View {
                             .multilineTextAlignment(.center)
                         
                         Button(action: {
-                            isOnboarding = true
-                          
+                            showingOnboarding = true
+                            
                         }, label: {
-                            if isOnboarding {
-                                Text("Restarted".uppercased())
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color.green)
-                            } else {
-                                Text("Restart".uppercased())
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color.secondary)
-                            }
+                            
+                            Text("Restart".uppercased())
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.secondary)
+                            
+                        })
+                        .sheet(isPresented: $showingOnboarding) {
+                            OnboardingView()
                         }
-                        )
-                        .padding()
-                        .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
+                        
+                            .padding()
+                            .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
                     }.padding(.horizontal)
                 }.navigationTitle("Fluently")
                 

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CompletedCardView: View {
     //: MARK: - Properties
+    @AppStorage("isOnboarding") var isOnboarding: Bool?
     @State private var isAnimating: Bool = false
     //:MARK: - Body
     var body: some View {
@@ -19,7 +20,6 @@ struct CompletedCardView: View {
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 2, x: 2, y: 2)
                     .scaleEffect(isAnimating ? 1.0 : 0.005)
                     
-                
                 
                 Text("Fantastic, You have completed the onboarding process. Please select the start button to continue. ")
                     .font(.system(size: 20))
