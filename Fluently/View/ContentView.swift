@@ -46,9 +46,9 @@ struct ContentView: View {
                             .onChange(of: text) { value in
                                 print("Value: \(value)")
                                 setTranslator(inputLanguage: TranslateLanguage.english, outputLanguage: TranslateLanguage.spanish)
-                                
-                                saveSomething()
-                                // lookForSomething()
+                                saveTranslator()
+                                //saveSomething()
+                                //lookForSomething()
                             }
                             
 
@@ -121,19 +121,69 @@ struct ContentView: View {
 
 extension ContentView {
     
+    func saveTranslator() {
+        
+        let translatorFilename = "translator"
+        let translatorToSave = self.translator!
+        
+        // Creating directory path, still not creating the directory in memory.
+        let fileManager = FileManager()
+        let sharedContainerDirectory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.fluently.appgroup")!
+        let sharedTranslatorsDirectory = sharedContainerDirectory.appendingPathComponent("Translators", isDirectory: true)
+        let translatorFilePath = sharedTranslatorsDirectory.appendingPathComponent(translatorFilename, isDirectory: false)
+        
+        // Check if Translators Directory is there
+        if fileManager.fileExists(atPath: sharedTranslatorsDirectory.path) {
+            do {
+                try fileManager.removeItem(atPath: sharedTranslatorsDirectory.path)
+            } catch let error {
+                print(error)
+            }
+        }
+        
+        // Create Language Directory
+        do {
+            try fileManager.createDirectory(at: sharedTranslatorsDirectory, withIntermediateDirectories: false, attributes: nil)
+            
+        } catch let error {
+            print("Error creating translators directory")
+            print(error)
+        }
+        
+        // Writing a file to memory
+        let data = translator as! NSCoding
+//        do {
+//            try data!.write(to: translatorFilePath, options: .atomic)
+//
+//        } catch let error {
+//            print("Error writing the file to memory")
+//            print(error)
+//        }
+    }
+    
     func saveSomething() {
         
         let stringFilename = "MyString.txt"
         let stringToSave = "12"
         
+        // Creating directory path, still not creating the directory in memory.
         let fileManager = FileManager()
         let sharedContainerDirectory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.fluently.appgroup")!
         let sharedLanguagesDirectory = sharedContainerDirectory.appendingPathComponent("Languages", isDirectory: true)
         let stringFilePath = sharedLanguagesDirectory.appendingPathComponent(stringFilename, isDirectory: false)
         
+        // Check if Language Directory is there
+        if fileManager.fileExists(atPath: sharedLanguagesDirectory.path) {
+            do {
+                try fileManager.removeItem(atPath: sharedLanguagesDirectory.path)
+            } catch let error {
+                print(error)
+            }
+        }
+        
         // Create Language Directory
         do {
-            try fileManager.createDirectory(at: sharedLanguagesDirectory, withIntermediateDirectories: true, attributes: nil)
+            try fileManager.createDirectory(at: sharedLanguagesDirectory, withIntermediateDirectories: false, attributes: nil)
             
         } catch let error {
             print("Error creating language directory")
@@ -149,16 +199,6 @@ extension ContentView {
             print("Error writing the file to memory")
             print(error)
         }
-        
-//        // Checking if there is something inside the shared containers directory
-//        do {
-//            let contentOfSharedContainer = try fileManager.contentsOfDirectory(atPath: sharedContainerDirectory.path)
-//            print(contentOfSharedContainer)
-//
-//        } catch let error {
-//            print("Error writing the file to memory")
-//            print(error)
-//        }
     }
     
     func lookForSomething() {
