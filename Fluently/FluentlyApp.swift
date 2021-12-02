@@ -21,7 +21,7 @@ struct FluentlyApp: App {
     var body: some Scene {
         WindowGroup {
             if isOnboarding {
-                OnboardingView()
+                ContentView()
             } else {
                 ContentView()
             }

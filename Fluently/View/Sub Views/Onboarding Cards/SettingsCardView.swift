@@ -36,32 +36,32 @@ struct SettingsCardView: View {
                 //: STEPS
                 Group {
                     HStack{
-                        Image(systemName: "arrowshape.turn.up.right.circle")
+                        Image(systemName: "1.circle")
                         Text("Go to Settings")
                             .font(.headline)
                     }
                     
                     
                     HStack {
-                        Image(systemName: "arrowshape.turn.up.right.circle")
+                        Image(systemName: "2.circle")
                         Text("Tap: General")
                             .font(.headline)
                     }
                   
                     
                     HStack {
-                        Image(systemName: "arrowshape.turn.up.right.circle")
+                        Image(systemName: "3.circle")
                         Text("Tap: Keyboards")
                             .font(.headline)
                     }
                    
                     HStack {
-                        Image(systemName: "arrowshape.turn.up.right.circle")
+                        Image(systemName: "4.circle")
                         Text("Tap: Add new Keyboard")
                             .font(.headline)
                     }
                     HStack {
-                        Image(systemName: "arrowshape.turn.up.right.circle")
+                        Image(systemName: "5.circle")
                         Text("Add fluently and enable full access")
                             .font(.headline)
                     }

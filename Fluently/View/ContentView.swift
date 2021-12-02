@@ -126,7 +126,7 @@ struct ContentView: View {
                             
                         }, label: {
                             
-                            Text("Restart".uppercased())
+                            Text("Tutorial".uppercased())
                                 .fontWeight(.bold)
                                 .foregroundColor(Color.secondary)
                             
