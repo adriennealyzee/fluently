@@ -23,8 +23,6 @@ struct LanguageSettings: View {
         LanguageRowView(languageName: "Japanese")
     ]
     
-    
-    
     var body: some View {
         NavigationView {
             List(languages, id: \.id) { language in

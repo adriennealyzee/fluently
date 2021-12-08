@@ -8,17 +8,13 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @AppStorage("isOnboarding") var isOnboarding: Bool?
+    
     var body: some View {
         TabView {
-            if isOnboarding == true {
+           
                 WelcomeCardView()
                 SettingsCardView()
                 CompletedCardView()
-            } else {
-                WelcomeCardView()
-                SettingsCardView()
-            }
             
         }
         .tabViewStyle(PageTabViewStyle())

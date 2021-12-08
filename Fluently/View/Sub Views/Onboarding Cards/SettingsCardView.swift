@@ -66,7 +66,7 @@ struct SettingsCardView: View {
                             .font(.headline)
                     }
                  
-                    SettingsButtonView()
+               
                         
                 }
             }.foregroundColor(.black)

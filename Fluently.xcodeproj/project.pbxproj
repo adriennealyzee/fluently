@@ -39,7 +39,6 @@
 		F244B896270756C900BDC3A2 /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B895270756C900BDC3A2 /* SettingsCardView.swift */; };
 		F244B898270756D800BDC3A2 /* CompletedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B897270756D800BDC3A2 /* CompletedCardView.swift */; };
 		F244B89B2707570D00BDC3A2 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B89A2707570D00BDC3A2 /* StartButtonView.swift */; };
-		F244B89D2707571C00BDC3A2 /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244B89C2707571C00BDC3A2 /* SettingsButtonView.swift */; };
 		F260EA942727527300F2BF3A /* LanguageSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F260EA932727527300F2BF3A /* LanguageSettings.swift */; };
 /* End PBXBuildFile section */
 
@@ -123,7 +122,6 @@
 		F244B895270756C900BDC3A2 /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
 		F244B897270756D800BDC3A2 /* CompletedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedCardView.swift; sourceTree = "<group>"; };
 		F244B89A2707570D00BDC3A2 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
-		F244B89C2707571C00BDC3A2 /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
 		F260EA932727527300F2BF3A /* LanguageSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -390,7 +388,6 @@
 		F2F5F44B270E86280023FD30 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				F244B89C2707571C00BDC3A2 /* SettingsButtonView.swift */,
 				F244B89A2707570D00BDC3A2 /* StartButtonView.swift */,
 			);
 			path = Buttons;
@@ -673,7 +670,6 @@
 				F244B89B2707570D00BDC3A2 /* StartButtonView.swift in Sources */,
 				F244B898270756D800BDC3A2 /* CompletedCardView.swift in Sources */,
 				F244B8912707568300BDC3A2 /* OnboardingView.swift in Sources */,
-				F244B89D2707571C00BDC3A2 /* SettingsButtonView.swift in Sources */,
 				F244B894270756BB00BDC3A2 /* WelcomeCardView.swift in Sources */,
 				1985AC7D25AF988A00C6A55F /* FluentlyApp.swift in Sources */,
 				1984C2FD25AF7CDC001C18D5 /* ContentView.swift in Sources */,

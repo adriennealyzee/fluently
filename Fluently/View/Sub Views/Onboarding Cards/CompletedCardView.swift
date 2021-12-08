@@ -21,7 +21,7 @@ struct CompletedCardView: View {
                     .scaleEffect(isAnimating ? 1.0 : 0.005)
                     
                 
-                Text("Fantastic, You have completed the onboarding process. Please select the start button to continue. ")
+                Text("Fantastic, You have completed the onboarding process. Let's translate!")
                     .font(.system(size: 20))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.center)

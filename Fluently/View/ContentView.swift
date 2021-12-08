@@ -132,11 +132,16 @@ struct ContentView: View {
                             
                         })
                         .sheet(isPresented: $showingOnboarding) {
-                            OnboardingView()
+                            TabView {
+                                WelcomeCardView()
+                                SettingsCardView()
+                            }
+                            .tabViewStyle(.page)
+                            .padding(.top)
                         }
                         
-                            .padding()
-                            .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
+                        .padding()
+                        .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous)))
                     }.padding(.horizontal)
                 }.navigationTitle("Fluently")
                 
